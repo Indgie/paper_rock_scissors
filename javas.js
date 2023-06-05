@@ -13,9 +13,10 @@
 function getComputerChoice() {
     let randomNumber = Math.random();
     console.log (randomNumber);
-    let rock = "Rock";
-    let paper = "Paper";
-    let scissors = "Scissors";
+    let rock = "rock";
+    let paper = "paper";
+    let scissors = "scissors";
+
     if (randomNumber < 0.33) {
         return rock;
     }
@@ -31,10 +32,11 @@ function playRound(playerSelection, computerSelection) {
     let won = "You won!";
     let loose = "You loose!";
     let tie = "It's a tie!";
-    if (playerSelection == "rock" && computerSelection == "Rock") {
+
+    if (playerSelection == "rock" && computerSelection == "rock") {
         return tie;
     }
-    else if (playerSelection == "rock" && computerSelection == "Paper") {
+    else if (playerSelection == "rock" && computerSelection == "paper") {
         return loose;
     }
     else {
@@ -42,6 +44,6 @@ function playRound(playerSelection, computerSelection) {
     }
   }
    
-  const playerSelection = "rock";
+  const playerSelection = prompt("Please choose rock, paper or scissors");
   const computerSelection = getComputerChoice();
   console.log(playRound(playerSelection, computerSelection));
