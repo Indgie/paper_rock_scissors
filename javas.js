@@ -10,7 +10,7 @@
 // IF user "paper" and computer ""
 
 
-function getComputerChoice () {
+function getComputerChoice() {
     let randomNumber = Math.random();
     console.log (randomNumber);
     let rock = "Rock";
@@ -27,4 +27,21 @@ function getComputerChoice () {
     }
 }
 
-console.log (getComputerChoice())
+function playRound(playerSelection, computerSelection) {
+    let won = "You won!";
+    let loose = "You loose!";
+    let tie = "It's a tie!";
+    if (playerSelection == "rock" && computerSelection == "Rock") {
+        return tie;
+    }
+    else if (playerSelection == "rock" && computerSelection == "Paper") {
+        return loose;
+    }
+    else {
+        return won;
+    }
+  }
+   
+  const playerSelection = "rock";
+  const computerSelection = getComputerChoice();
+  console.log(playRound(playerSelection, computerSelection));
