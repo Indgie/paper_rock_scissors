@@ -10,18 +10,21 @@
 // IF user "paper" and computer ""
 
 
-let randomNumber = Math.random();
-console.log (randomNumber);
-let rock = "Rock";
-let paper = "Paper";
-let scissors = "Scissors";
+function getComputerChoice () {
+    let randomNumber = Math.random();
+    console.log (randomNumber);
+    let rock = "Rock";
+    let paper = "Paper";
+    let scissors = "Scissors";
+    if (randomNumber < 0.33) {
+        return rock;
+    }
+    else if (randomNumber >= 0.33 && randomNumber <= 0.66) {
+        return paper;
+    }
+    else {
+        return scissors;
+    }
+}
 
-if (randomNumber < 0.33) {
-    console.log (rock);
-}
-else if (randomNumber >= 0.33 && randomNumber <= 0.66) {
-    console.log (paper);
-}
-else {
-    console.log (scissors);
-}
+console.log (getComputerChoice())
