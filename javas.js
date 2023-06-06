@@ -57,12 +57,14 @@ function playRound(playerSelection, computerSelection) {
             computerScore = computerScore + 0;
             console.log("Your score is " + userScore + "\nComputer score is " + computerScore);
             console.log(" ");
+            
         }
         else if (roundResult == loose) {
             userScore = userScore + 0;
             computerScore = computerScore + 1;
             console.log("Your score is " + userScore + "\nComputer score is " + computerScore);
             console.log(" ");
+            
         }
         else if (roundResult == tie) {
             userScore = userScore + 0;
@@ -71,6 +73,7 @@ function playRound(playerSelection, computerSelection) {
             console.log(" ");
         }
     }
+<<<<<<< HEAD
     if (userScore > computerScore) {
         console.log("Congratulations! You won against computer!");
     }
@@ -80,6 +83,8 @@ function playRound(playerSelection, computerSelection) {
     //else {
         //console.log("WOW! It seems that it's a tie! You need another match!");
     //}
+=======
+>>>>>>> parent of bbae034 (Complete version of 5 game rounds)
   }
 
   game();
