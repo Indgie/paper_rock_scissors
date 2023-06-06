@@ -21,11 +21,12 @@ function getComputerChoice() {
     }
 
 // FUNCTION that plays one round user against computer //
+let won = "You won!";
+let loose = "You loose!";
+let tie = "It's a tie!";
 
 function playRound(playerSelection, computerSelection) {
-    let won = "You won!";
-    let loose = "You loose!";
-    let tie = "It's a tie!";
+
 
     if (playerSelection === computerSelection) {
         return tie;
@@ -40,25 +41,11 @@ function playRound(playerSelection, computerSelection) {
         return won;
     }
   }
-  // SAVE computer choice in new variable and print it
-  //const computerSelection = getComputerChoice();
-  //console.log ("Computer chose " + computerSelection);
-
-  // PROMPT user for input and print it//
-  //const playerSelection = prompt("Please choose rock, paper or scissors").toLowerCase();
-  //console.log ("You chose " + playerSelection);
-
-
-  // SAVE round result in new variable and print it //
-  //const roundResult = playRound(playerSelection, computerSelection);
-  //console.log(roundResult);
-
-  //Turiu kintamaji, kuris pasako kompiuterio pasirinkima, turiu kintamaji, 
-  //kuris pasako userio pasirinkima, turiu kintamaji, kuris pasako rezultata
-  // turiu funkcija, kuri padaro kompiuterio pasirinkima, funkcija, kuri paima userio pasirinkima, funkcija, kuri nurodo laimetoja
 
   //ko man reikia!!! Funkcijos, kuri, 5 kartus paleistu zaidima ir issaugotu rezultata, funkcijos, kuri paskelbtu galutini laimetoja
-  
+
+
+
   function game() {
     for (let i = 0; i < 5; i++) {
         const computerSelection = getComputerChoice();
@@ -67,9 +54,35 @@ function playRound(playerSelection, computerSelection) {
         console.log("You chose " + playerSelection);
         const roundResult = playRound(playerSelection, computerSelection);
         console.log(roundResult);
-        console.log(i);
+        //console.log(i);
+        let userScore = 0;
+        let computerScore = 0;
+        let newUserScore;
+        let newComputerScore;
+        if (roundResult == won) {
+            userScore = userScore + 1;
+            computerScore = computerScore + 0;
+            console.log("Your score is " + userScore + "\nComputer score is " + computerScore);
+            console.log(" ");
+            
+        }
+        else if (roundResult == loose) {
+            userScore = userScore + 0;
+            computerScore = computerScore + 1;
+            console.log("Your score is " + userScore + "\nComputer score is " + computerScore);
+            console.log(" ");
+            
+        }
+        else if (roundResult == tie) {
+            userScore = userScore + 0;
+            computerScore = computerScore + 0;
+            console.log("Your score is " + userScore + "\nComputer score is " + computerScore);
+            console.log(" ");
+        }
+        //console.log("Your score is " + userScore);
+        //console.log("Computer score is " + computerScore);
     }
-    //playRound(playerSelection, computerSelection);
   }
 
   game();
+
