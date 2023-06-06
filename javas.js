@@ -1,18 +1,10 @@
-// user is asked to enter his choice "rock, paper or scissors"
-// user enters his choice
-// then computer makes move
-// IF users choice is "rock" and computers is "paper"
-//      announce that computer wins
-// IF users choice is "rock" and computers is "scissors"
-//      announce that user wins
-// IF users choice is "rock" and computers is "rock"
-//      announce that its a tie
-// IF user "paper" and computer ""
 
+
+
+// FUNCTION that makes random computer choice //
 
 function getComputerChoice() {
     let randomNumber = Math.random();
-    console.log (randomNumber);
     let rock = "rock";
     let paper = "paper";
     let scissors = "scissors";
@@ -23,32 +15,48 @@ function getComputerChoice() {
     else if (randomNumber >= 0.33 && randomNumber <= 0.66) {
         return paper;
     }
-    else {
+    else if (randomNumber > 0.66) {
         return scissors;
+    }   
     }
-}
+
+// FUNCTION that plays one round user against computer //
 
 function playRound(playerSelection, computerSelection) {
     let won = "You won!";
     let loose = "You loose!";
     let tie = "It's a tie!";
 
-    if (playerSelection == "rock" && computerSelection == "rock" ||
-        playerSelection == "paper" && computerSelection == "paper" ||
-        playerSelection == "scissors" && computerSelection == "scissors") {
+    if (playerSelection === computerSelection) {
         return tie;
         
     }
-    else if (playerSelection == "rock" && computerSelection == "paper" ||
-            playerSelection == "paper" && computerSelection == "scissors" ||
-            playerSelection == "scissors" && computerSelection == "rock") {
+    else if ((playerSelection === "rock" && computerSelection === "paper") ||
+            (playerSelection === "paper" && computerSelection === "scissors") ||
+            (playerSelection === "scissors" && computerSelection === "rock")) {
         return loose;
     }
     else {
         return won;
     }
   }
-   
-  const playerSelection = prompt("Please choose rock, paper or scissors").toLowerCase();
+  // SAVE computer choice in new variable
   const computerSelection = getComputerChoice();
+
+  // PRINT computer choice for user //
+  console.log ("Computer chose " + computerSelection);
+
+  // FUNCTION
+  const playerSelection = prompt("Please choose rock, paper or scissors").toLowerCase();
+  function game () {
+    console.log ("You chose " + playerSelection);
+  }
+
+  game ();
+  // PROMPT user for input //
+  //const playerSelection = prompt("Please choose rock, paper or scissors").toLowerCase();
+
+
+
+  // PRINT results //
   console.log(playRound(playerSelection, computerSelection));
