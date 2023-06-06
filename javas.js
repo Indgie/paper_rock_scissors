@@ -33,10 +33,15 @@ function playRound(playerSelection, computerSelection) {
     let loose = "You loose!";
     let tie = "It's a tie!";
 
-    if (playerSelection == "rock" && computerSelection == "rock") {
+    if (playerSelection == "rock" && computerSelection == "rock" ||
+        playerSelection == "paper" && computerSelection == "paper" ||
+        playerSelection == "scissors" && computerSelection == "scissors") {
         return tie;
+        
     }
-    else if (playerSelection == "rock" && computerSelection == "paper") {
+    else if (playerSelection == "rock" && computerSelection == "paper" ||
+            playerSelection == "paper" && computerSelection == "scissors" ||
+            playerSelection == "scissors" && computerSelection == "rock") {
         return loose;
     }
     else {
@@ -44,6 +49,6 @@ function playRound(playerSelection, computerSelection) {
     }
   }
    
-  const playerSelection = prompt("Please choose rock, paper or scissors");
+  const playerSelection = prompt("Please choose rock, paper or scissors").toLowerCase();
   const computerSelection = getComputerChoice();
   console.log(playRound(playerSelection, computerSelection));
