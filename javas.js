@@ -41,14 +41,35 @@ function playRound(playerSelection, computerSelection) {
     }
   }
   // SAVE computer choice in new variable and print it
-  const computerSelection = getComputerChoice();
-  console.log ("Computer chose " + computerSelection);
+  //const computerSelection = getComputerChoice();
+  //console.log ("Computer chose " + computerSelection);
 
   // PROMPT user for input and print it//
-    const playerSelection = prompt("Please choose rock, paper or scissors").toLowerCase();
-    console.log ("You chose " + playerSelection);
+  //const playerSelection = prompt("Please choose rock, paper or scissors").toLowerCase();
+  //console.log ("You chose " + playerSelection);
 
 
   // SAVE round result in new variable and print it //
-  const roundResult = playRound(playerSelection, computerSelection);
-  console.log(roundResult);
+  //const roundResult = playRound(playerSelection, computerSelection);
+  //console.log(roundResult);
+
+  //Turiu kintamaji, kuris pasako kompiuterio pasirinkima, turiu kintamaji, 
+  //kuris pasako userio pasirinkima, turiu kintamaji, kuris pasako rezultata
+  // turiu funkcija, kuri padaro kompiuterio pasirinkima, funkcija, kuri paima userio pasirinkima, funkcija, kuri nurodo laimetoja
+
+  //ko man reikia!!! Funkcijos, kuri, 5 kartus paleistu zaidima ir issaugotu rezultata, funkcijos, kuri paskelbtu galutini laimetoja
+  
+  function game() {
+    for (let i = 0; i < 5; i++) {
+        const computerSelection = getComputerChoice();
+        console.log("Computer chose " + computerSelection);
+        const playerSelection = prompt("Please choose rock, paper or scissors").toLowerCase();
+        console.log("You chose " + playerSelection);
+        const roundResult = playRound(playerSelection, computerSelection);
+        console.log(roundResult);
+        console.log(i);
+    }
+    //playRound(playerSelection, computerSelection);
+  }
+
+  game();
