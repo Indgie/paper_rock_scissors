@@ -40,23 +40,15 @@ function playRound(playerSelection, computerSelection) {
         return won;
     }
   }
-  // SAVE computer choice in new variable
+  // SAVE computer choice in new variable and print it
   const computerSelection = getComputerChoice();
-
-  // PRINT computer choice for user //
   console.log ("Computer chose " + computerSelection);
 
-  // FUNCTION
-  const playerSelection = prompt("Please choose rock, paper or scissors").toLowerCase();
-  function game () {
+  // PROMPT user for input and print it//
+    const playerSelection = prompt("Please choose rock, paper or scissors").toLowerCase();
     console.log ("You chose " + playerSelection);
-  }
-
-  game ();
-  // PROMPT user for input //
-  //const playerSelection = prompt("Please choose rock, paper or scissors").toLowerCase();
 
 
-
-  // PRINT results //
-  console.log(playRound(playerSelection, computerSelection));
+  // SAVE round result in new variable and print it //
+  const roundResult = playRound(playerSelection, computerSelection);
+  console.log(roundResult);
