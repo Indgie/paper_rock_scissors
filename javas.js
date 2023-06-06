@@ -60,14 +60,12 @@ function playRound(playerSelection, computerSelection) {
             computerScore = computerScore + 0;
             console.log("Your score is " + userScore + "\nComputer score is " + computerScore);
             console.log(" ");
-            
         }
         else if (roundResult == loose) {
             userScore = userScore + 0;
             computerScore = computerScore + 1;
             console.log("Your score is " + userScore + "\nComputer score is " + computerScore);
             console.log(" ");
-            
         }
         else if (roundResult == tie) {
             userScore = userScore + 0;
@@ -75,6 +73,15 @@ function playRound(playerSelection, computerSelection) {
             console.log("Your score is " + userScore + "\nComputer score is " + computerScore);
             console.log(" ");
         }
+    }
+    if (userScore > computerScore) {
+        console.log("Congratulations! You won against computer!");
+    }
+    else if (userScore < computerScore) {
+        console.log("Computer won, try again!");
+    }
+    else {
+        console.log("WOW! It seems that it's a tie! You need another match!");
     }
   }
 
