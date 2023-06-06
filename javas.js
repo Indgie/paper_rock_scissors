@@ -41,14 +41,11 @@ function playRound(playerSelection, computerSelection) {
         return won;
     }
   }
-
-  //ko man reikia!!! Funkcijos, kuri, 5 kartus paleistu zaidima ir issaugotu rezultata, funkcijos, kuri paskelbtu galutini laimetoja
-
-
   let userScore = 0;
   let computerScore = 0;
+  let i = 0;
   function game() {
-    for (let i = 0; i < 5; i++) {
+    while ((5 == userScore) || (5 == computerScore)) {
         const playerSelection = prompt("Please choose rock, paper or scissors").toLowerCase();
         console.log("You chose " + playerSelection);
         const computerSelection = getComputerChoice();
@@ -80,9 +77,9 @@ function playRound(playerSelection, computerSelection) {
     else if (userScore < computerScore) {
         console.log("Computer won, try again!");
     }
-    else {
-        console.log("WOW! It seems that it's a tie! You need another match!");
-    }
+    //else {
+        //console.log("WOW! It seems that it's a tie! You need another match!");
+    //}
   }
 
   game();
