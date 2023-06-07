@@ -1,6 +1,3 @@
-
-
-
 // FUNCTION that makes random computer choice //
 
 function getComputerChoice() {
@@ -43,9 +40,8 @@ function playRound(playerSelection, computerSelection) {
   }
   let userScore = 0;
   let computerScore = 0;
-  let i = 0;
   function game() {
-    while ((5 == userScore) || (5 == computerScore)) {
+    while ((4 >= userScore) && (4 >= computerScore)) {
         const playerSelection = prompt("Please choose rock, paper or scissors").toLowerCase();
         console.log("You chose " + playerSelection);
         const computerSelection = getComputerChoice();
@@ -57,14 +53,12 @@ function playRound(playerSelection, computerSelection) {
             computerScore = computerScore + 0;
             console.log("Your score is " + userScore + "\nComputer score is " + computerScore);
             console.log(" ");
-            
         }
         else if (roundResult == loose) {
             userScore = userScore + 0;
             computerScore = computerScore + 1;
             console.log("Your score is " + userScore + "\nComputer score is " + computerScore);
             console.log(" ");
-            
         }
         else if (roundResult == tie) {
             userScore = userScore + 0;
@@ -73,19 +67,17 @@ function playRound(playerSelection, computerSelection) {
             console.log(" ");
         }
     }
-<<<<<<< HEAD
     if (userScore > computerScore) {
         console.log("Congratulations! You won against computer!");
     }
     else if (userScore < computerScore) {
         console.log("Computer won, try again!");
     }
-    //else {
-        //console.log("WOW! It seems that it's a tie! You need another match!");
-    //}
-=======
->>>>>>> parent of bbae034 (Complete version of 5 game rounds)
+    else {
+        console.log("WOW! It seems that it's a tie! You need another match!");
+    }
   }
 
   game();
+
 
