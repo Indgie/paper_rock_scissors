@@ -44,7 +44,7 @@ function playRound(playerSelection, computerSelection) {
     }
   };
 
-  //DOM manipulation
+  //DOM manipulation, play 5 rounds
   let userScore = 0;
   let computerScore = 0;
   let round = 1;
@@ -54,30 +54,47 @@ function playRound(playerSelection, computerSelection) {
       button.addEventListener("click", () => {
           if (userScore < 5 && computerScore < 5) {
               const playerSelection = getUserChoice(button.id);
-              console.log("You chose " + playerSelection);
+              const userChoice = document.querySelector(".user-choice");
+              userChoice.textContent = "You chose " + playerSelection;
               const computerSelection = getComputerChoice();
-              console.log("Computer chose " + computerSelection);
+              const computerChoice = document.querySelector(".computer-choice");
+              computerChoice.textContent = "Computer chose " + computerSelection;
               const roundResult = playRound(playerSelection, computerSelection);
-              console.log(roundResult);
+              const finalRoundResult = document.querySelector(".round-result");
+              finalRoundResult.textContent = roundResult;
+              //console.log(roundResult);
   
               if (roundResult === won) {
                   userScore++;
               } else if (roundResult === loose) {
                   computerScore++;
               }
-  
-              console.log("Your score is " + userScore);
-              console.log("Computer score is " + computerScore);
-              console.log(" ");
+              const userResult = document.querySelector(".user-score");
+              userResult.textContent = "Your score is " + userScore;
+              const computerRes = document.querySelector(".computer-score");
+              computerRes.textContent = "Computer score is " + computerScore;
           }
   
           if (userScore === 5) {
-              console.log("Congratulations! You won against the computer!");
+                const finalRoundResult = document.querySelector(".round-result");
+                finalRoundResult.replaceChildren(); //remove round result input
+                const announceResult = document.querySelector(".final-result")
+                announceResult.textContent = "Congratulations! You won against the computer!";
           } else if (computerScore === 5) {
-              console.log("Computer won, try again!");
+                const finalRoundResult = document.querySelector(".round-result");
+                finalRoundResult.replaceChildren(); //remove round result input
+                const announceResult = document.querySelector(".final-result")
+                announceResult.textContent = "Computer won, try again!";
           }
       })
   );
+
+// refresh page
+  document.addEventListener('keyup', event => {
+    if (event.code === 'Space') {
+        location.reload();
+    }
+  });
 
 
 

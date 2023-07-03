@@ -1,0 +1,38 @@
+body {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.choice-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.button-choice {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+.cat {
+    width: 30%;
+    height: auto;
+}
+.paw-rock,.paw-paper,.paw-scissors {
+    width: 30%;
+    height: auto;
+}
+
+#rock, #paper, #scissors {
+    border: none;
+    background-size:contain;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+    width: 100%;
+    height: auto; 
+
+}
