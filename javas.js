@@ -1,3 +1,4 @@
+
 // FUNCTION that makes random computer choice //
 
 function getComputerChoice() {
@@ -16,7 +17,11 @@ function getComputerChoice() {
         return scissors;
     }   
     }
+// FUNCTION that gets user choice 
+function getUserChoice(userChoice) {
+    return userChoice;
 
+}
 // FUNCTION that plays one round user against computer //
 let won = "You won!";
 let loose = "You loose!";
@@ -37,47 +42,43 @@ function playRound(playerSelection, computerSelection) {
     else {
         return won;
     }
-  }
+  };
+
+  //DOM manipulation
   let userScore = 0;
   let computerScore = 0;
-  function game() {
-    while ((4 >= userScore) && (4 >= computerScore)) {
-        const playerSelection = prompt("Please choose rock, paper or scissors").toLowerCase();
-        console.log("You chose " + playerSelection);
-        const computerSelection = getComputerChoice();
-        console.log("Computer chose " + computerSelection);
-        const roundResult = playRound(playerSelection, computerSelection);
-        console.log(roundResult);
-        if (roundResult == won) {
-            userScore = userScore + 1;
-            computerScore = computerScore + 0;
-            console.log("Your score is " + userScore + "\nComputer score is " + computerScore);
-            console.log(" ");
-        }
-        else if (roundResult == loose) {
-            userScore = userScore + 0;
-            computerScore = computerScore + 1;
-            console.log("Your score is " + userScore + "\nComputer score is " + computerScore);
-            console.log(" ");
-        }
-        else if (roundResult == tie) {
-            userScore = userScore + 0;
-            computerScore = computerScore + 0;
-            console.log("Your score is " + userScore + "\nComputer score is " + computerScore);
-            console.log(" ");
-        }
-    }
-    if (userScore > computerScore) {
-        console.log("Congratulations! You won against computer!");
-    }
-    else if (userScore < computerScore) {
-        console.log("Computer won, try again!");
-    }
-    else {
-        console.log("WOW! It seems that it's a tie! You need another match!");
-    }
-  }
+  let round = 1;
+  
+  const buttons = document.querySelectorAll("button");
+  buttons.forEach((button) =>
+      button.addEventListener("click", () => {
+          if (userScore < 5 && computerScore < 5) {
+              const playerSelection = getUserChoice(button.id);
+              console.log("You chose " + playerSelection);
+              const computerSelection = getComputerChoice();
+              console.log("Computer chose " + computerSelection);
+              const roundResult = playRound(playerSelection, computerSelection);
+              console.log(roundResult);
+  
+              if (roundResult === won) {
+                  userScore++;
+              } else if (roundResult === loose) {
+                  computerScore++;
+              }
+  
+              console.log("Your score is " + userScore);
+              console.log("Computer score is " + computerScore);
+              console.log(" ");
+          }
+  
+          if (userScore === 5) {
+              console.log("Congratulations! You won against the computer!");
+          } else if (computerScore === 5) {
+              console.log("Computer won, try again!");
+          }
+      })
+  );
 
-  game();
+
 
 
