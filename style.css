@@ -10,7 +10,7 @@ body {
 }
 .choice-image {
     display: flex;
-    justify-content: c;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 10px;
@@ -19,12 +19,13 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+
     
 }
 .cat {
     width: 25%;
     height: auto;
-    padding: 15px;
+    padding: 20px;
 }
 .paw-rock,.paw-paper,.paw-scissors {
     width: 25%;
@@ -66,4 +67,11 @@ body {
 }
 .round-result {
     font-weight: bold;
+}
+
+
+.make-choice {
+    text-align:center;
+    font-weight: bold;
+
 }
