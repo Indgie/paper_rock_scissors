@@ -58,7 +58,7 @@ function playRound(playerSelection, computerSelection) {
               userChoice.textContent = "You chose " + playerSelection;
               const computerSelection = getComputerChoice();
               const computerChoice = document.querySelector(".computer-choice");
-              computerChoice.textContent = "Computer chose " + computerSelection;
+              computerChoice.textContent = "Cat chose " + computerSelection;
               const roundResult = playRound(playerSelection, computerSelection);
               const finalRoundResult = document.querySelector(".round-result");
               finalRoundResult.textContent = roundResult;
@@ -72,19 +72,19 @@ function playRound(playerSelection, computerSelection) {
               const userResult = document.querySelector(".user-score");
               userResult.textContent = "Your score is " + userScore;
               const computerRes = document.querySelector(".computer-score");
-              computerRes.textContent = "Computer score is " + computerScore;
+              computerRes.textContent = "Cat score is " + computerScore;
           }
   
           if (userScore === 5) {
                 const finalRoundResult = document.querySelector(".round-result");
                 finalRoundResult.replaceChildren(); //remove round result input
                 const announceResult = document.querySelector(".final-result")
-                announceResult.textContent = "Congratulations! You won against the computer!";
+                announceResult.textContent = "You won against the cat! You may pet it now!";
           } else if (computerScore === 5) {
                 const finalRoundResult = document.querySelector(".round-result");
                 finalRoundResult.replaceChildren(); //remove round result input
                 const announceResult = document.querySelector(".final-result")
-                announceResult.textContent = "Computer won, try again!";
+                announceResult.textContent = "Cat won, now serve!";
           }
       })
   );
